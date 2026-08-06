@@ -1,0 +1,13 @@
+review_id,product_id,review_text,label
+1,1001,"I absolutely loved this product and would recommend it",Positive
+2,1002,"This is the worst experience I have had",Negative
+3,1003,"The product is okay and does what I expected",Neutral
+4,1004,"Amazing quality and fast shipping",Positive
+5,1005,"Terrible service and broken item",Negative
+6,1006,"It is fine, nothing special",Neutral
+7,1007,"Excellent value and very satisfied",Positive
+8,1008,"Poor performance and disappointing",Negative
+9,1009,"Average quality, not bad but not great",Neutral
+10,1010,"Wonderful purchase and great support",Positive
+11,1011,"Awful packaging and poor support",Negative
+12,1012,"Moderately good and acceptable",Neutral

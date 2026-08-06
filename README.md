@@ -1,25 +1,35 @@
-# ⚡ Taqeem Challenge
+# Review Sentiment Microservice
 
----
+This repository contains a lightweight Python service for classifying product review sentiment into Positive, Neutral, or Negative.
 
-## 🧠 What This Is
+## Features
+- FastAPI-based REST API with `/predict`, `/health`, and `/metrics`
+- CPU-friendly scikit-learn classifier packaged with joblib
+- Unit tests covering inference and API behavior
+- Docker-ready container image
 
-You're about to build something.
+## Project structure
+- `src/api.py` – FastAPI routes
+- `src/model.py` – model training and inference logic
+- `tests/test_inference.py` – unit tests
+- `data/reviews.csv` – sample review dataset
 
-This is your private workspace — fork it, code it, ship it. No friction.
-
----
-
-## 🚀 One Flow
-
+## Run locally
+```bash
+python -m pip install -r requirements.txt
+python -m pytest -q
+python -m uvicorn src.api:app --host 0.0.0.0 --port 8000
 ```
-Fork → Codespaces → Code → Commit → Submit
+
+## Docker
+```bash
+docker build -t review-sentiment .
+docker run -p 8000:8000 review-sentiment
 ```
 
-1. **Fork** this repo (top right)
-2. **Open in Codespaces** (`Code` → `Codespaces` → `Create`)
-3. **Write your solution**
-4. **Commit & push**
-5. **Click "Submit"** back in Taqeem
-
-Done.
+## Example request
+```bash
+curl -X POST http://127.0.0.1:8000/predict \
+  -H 'Content-Type: application/json' \
+  -d '{"review_text": "I loved this product"}'
+```
